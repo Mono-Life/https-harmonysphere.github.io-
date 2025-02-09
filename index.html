@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الصفحة الرئيسية</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}body{background:#000;display:flex;flex-direction:column;min-height:100vh;position:relative} 
+.sidebar-container{position:fixed;left:-250px;top:0;width:20vw;height:100%;background:#4a2a40;padding:2vw;color:#fff;transition:.3s;z-index:1000;border-radius:0 170px 155px 0;box-shadow:0 0 20px rgba(255,16,240,0.8),0 0 30px rgba(255,16,240,0.5);overflow-y:auto}
+.sidebar-container.active{left:0}
+.sidebar-container::-webkit-scrollbar{width:5px}
+.sidebar-container::-webkit-scrollbar-track{background:#2e1d2c;border-radius:10px}
+.sidebar-container::-webkit-scrollbar-thumb{background:#d47fa6;border-radius:10px}
+.sidebar-container::-webkit-scrollbar-thumb:hover{background:#e09cbc}
+.toggle-btn{position:fixed;left:2vw;top:2vw;background:#4a2a40;color:#fff;border:none;padding:10px;cursor:pointer;border-radius:0 155px 155px 0;transition:.6s;z-index:1000;font-size:1.5rem;box-shadow:0 0 20px rgba(255,16,240,0.8),0 0 30px rgba(255,16,240,0.5)}
+.toggle-btn.active{left:22vw}
+.toggle-btn:hover{background:#6b3a58;transform:scale(0.6)}
+.nav-links{list-style:none;padding:0 2vw;margin-top:3vw}
+.nav-links li{margin:1vw 0}
+.nav-links a{color:#e0c9d6;text-decoration:none;font-size:1.2rem;transition:.2s;display:block;padding:10px 15px;border-radius:100px;box-shadow:0 0 20px rgba(255,16,240,0.8),0 0 30px rgba(255,16,240,0.5)}
+.nav-links a:hover{background:#6b3a58;transform:translateX(2vw);box-shadow:2px 2px 8px rgba(0,0,0,0.2)}
+.logo{text-align:center;margin-bottom:2vw;padding-bottom:1vw;border-bottom:2px solid #6b3a58}
+.logo img{max-width:60%;height:auto;filter:drop-shadow(0 0 5px rgba(0,0,0,0.3))}
+.main-content{flex:1;padding:3vw;color:#fff;transition:.3s;margin-left:0}
+.header{background:rgba(255,255,255,0.1);padding:3vw;border-radius:2vw;margin-bottom:3vw;backdrop-filter:blur(5px)}
+.footer{background:#4a2a40;text-align:center;padding:1vw 0;color:#fff}
+.static-glow{font-size:3rem;text-align:center;color:#fff;margin:20px 0;text-shadow:0 0 10px #ff10f0,0 0 20px #ff10f0,0 0 30px #ff10f0}
+@media(max-width:768px){.sidebar-container{width:50vw;left:-50vw}.sidebar-container.active{left:0}.toggle-btn.active{left:75vw}.nav-links a{font-size:1rem;padding:8px 12px}.static-glow{font-size:2.5rem}}
+@media(max-width:480px){.toggle-btn{font-size:4vw;padding:3vw}.sidebar-container{width:40vw;left:-40vw}.toggle-btn.active{left:85vw}.nav-links a{font-size:1.2rem;padding:10px}.static-glow{font-size:2rem}}
+p{font-size:1.2rem;color:#f1f1f1}h2{font-size:2rem;color:#ff10f0}
+.container{max-width:1200px;margin:50px auto;padding:20px}
+.title{text-align:center;color:#fff;font-size:3.5em;margin-bottom:40px;text-transform:uppercase;letter-spacing:3px;text-shadow:0 0 15px rgba(255,255,255,0.5);position:relative}
+.title::after{content:'';position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:200px;height:3px;background:linear-gradient(90deg,transparent,#ff00ff,transparent)}
+.players-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:20px}
+.player-container{position:relative;border-radius:15px;overflow:hidden;transition:.3s;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);box-shadow:0 0 30px rgba(0,0,0,0.3)}
+.player-container:hover{transform:translateY(-10px);box-shadow:0 0 50px rgba(255,0,255,0.4)}
+.video-wrapper{position:relative;width:100%;height:0;padding-bottom:56.25%}
+.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.glow-effect{position:absolute;width:100%;height:100%;top:0;left:0;background:linear-gradient(45deg,rgba(255,0,255,0.3) 0%,rgba(0,255,255,0.3) 100%);z-index:-1}
+@media(max-width:768px){.players-grid{grid-template-columns:1fr}.title{font-size:2.5em}}
+</style>
+</head>
+<body>
+<button class="toggle-btn" id="toggleBtn">𖣘</button>
+<div class="sidebar-container" id="sidebar">
+  <div class="logo"><img src="https://raw.githubusercontent.com/Mono-Life/logo-mono/main/mono.png" alt="شعار الموقع"></div>
+  <ul class="nav-links">
+    <li><a href="https://sites.google.com/view/monolight2025/our-videos" target="_blank">Our Videos</a></li>
+    <li><a href="#" target="_blank">Album *soon*</a></li>
+    <li><a href="https://sites.google.com/view/monolight2025/downlad" target="_blank">Download</a></li>
+    <li><a href="#" target="_blank">soon</a></li>
+    <li><a href="#" target="_blank">soon</a></li>
+    <li><a href="#" target="_blank">soon</a></li>
+    <li><a href="#" target="_blank">soon</a></li>
+  </ul>
+</div>
+<div class="main-content">
+  <div class="static-glow">Harmony Sphere</div>
+  <div class="content">
+    <h2>Welcome to Harmony Sphere Official website</h2>
+    <p>You can download songs, watch videos, and view photos from our YouTube channel for free on our website</p>
+    <p>Don't forget to subscribe to the channel (:</p>
+    <p>*Click 𖣘 and choose what you want*</p>
+  </div>
+  <div class="container">
+    <h1 class="title">Top Videos</h1>
+    <div class="players-grid">
+      <div class="player-container">
+        <div class="glow-effect"></div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/G8T90Qv_grQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="player-container">
+        <div class="glow-effect"></div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/_YK4DZuBcGs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="player-container">
+        <div class="glow-effect"></div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/znv_GHpg6jQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <p>&copy; All rights reserved - Harmony Sphere</p>
+</footer>
+<script>
+const sidebar=document.getElementById('sidebar'),toggleBtn=document.getElementById('toggleBtn');
+toggleBtn.addEventListener('click',()=>{sidebar.classList.toggle('active');toggleBtn.classList.toggle('active');toggleBtn.textContent=sidebar.classList.contains('active')?'×':'𖣘'});
+</script>
+</body>
+</html>
